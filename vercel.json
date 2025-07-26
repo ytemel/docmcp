@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "ui/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "ui/public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "ui/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "ui/public/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "ui/server.js": {
+      "maxDuration": 300
+    }
+  }
+} 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocMCP - LLM Documentation Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <!-- Theme Toggle (Fixed Top-Right) -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-button" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+        </button>
+    </div>
+
+    <!-- Main Container (100vh) -->
+    <div class="app-container">
+        
+        <!-- Header & Input Section (15%) -->
+        <header class="header-section">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    DocMCP
+                </div>
+                
+                <div class="input-section">
+                    <label for="docUrl" class="input-label">Documentation URL</label>
+                    <div class="input-row">
+                        <input 
+                            type="url" 
+                            id="docUrl" 
+                            class="url-input" 
+                            placeholder="https://docs.example.com"
+                            required
+                        >
+                        <button id="convertBtn" class="go-button" type="button" disabled>
+                            <span class="button-text">Go!</span>
+                            <div class="button-spinner" style="display: none;">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div id="urlError" class="input-error" style="display: none;"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Processing Section (10%) -->
+        <section class="processing-section">
+            <div class="processing-content" id="processingContent">
+                <div class="status-message" id="statusMessage">Ready to convert documentation</div>
+            </div>
+        </section>
+
+        <!-- Results Section (75%) -->
+        <section class="results-section">
+            <div class="results-container" id="resultsContainer">
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📄</div>
+                    <h3>Ready to Convert Documentation</h3>
+                    <p>Enter a documentation website URL above and click "Go!" to convert it into LLM-friendly Markdown format. The conversion process will crawl the site and optimize the content for better AI understanding.</p>
+                </div>
+
+                <!-- Results Content (Hidden by default) -->
+                <div class="results-content" id="resultsContent" style="display: none;">
+                    <div class="results-header">
+                        <h3 id="resultsTitle">Conversion Results</h3>
+                        <div class="results-count" id="resultsCount">0 pages</div>
+                    </div>
+                    <div class="results-grid" id="resultsGrid">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Main Application Script -->
+    <script src="app.js"></script>
+    
+    <!-- Stagewise Toolbar for Development (AI-powered editing) -->
+    <script src="stagewise-init.js"></script>
+</body>
+</html> 

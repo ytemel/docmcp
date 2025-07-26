@@ -1,0 +1,32 @@
+{
+  "name": "docmcp-ui",
+  "version": "1.0.0",
+  "description": "LLM-Optimised Documentation Converter Web UI",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.0",
+    "express": "^4.18.0",
+    "jszip": "^3.10.1",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "@stagewise/toolbar": "^0.6.2",
+    "nodemon": "^3.0.0"
+  },
+  "type": "module",
+  "keywords": [
+    "documentation",
+    "converter",
+    "llm",
+    "ui"
+  ],
+  "author": "Yagiz Temel",
+  "license": "MIT"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "docmcp-prototype",
+  "version": "1.0.0",
+  "description": "Documentation crawler prototype using Firecrawl MCP",
+  "main": "prototype.js",
+  "type": "module",
+  "scripts": {
+    "start": "node prototype.js",
+    "dev": "node prototype.js",
+    "convert": "node convert-to-md.js",
+    "ui": "cd ui && npm start",
+    "ui:dev": "cd ui && npm run dev",
+    "ui:install": "cd ui && npm install"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.0",
+    "openai": "^4.28.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["documentation", "crawler", "firecrawl", "mcp"],
+  "author": "Yagiz Temel",
+  "license": "MIT"
+} 
