@@ -22,10 +22,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "ui/server.js": {
-      "maxDuration": 300
-    }
   }
-} 
+}
